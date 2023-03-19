@@ -7,16 +7,6 @@ from scipy.optimize import curve_fit
 
 # define plots
 
-def plot_data(x_data, y_data, x_label='', y_label='', title='', label=''):
-    plt.style.use('seaborn-v0_8-whitegrid')
-    plt.figure(figsize=(10,5), dpi=300)
-    plt.title(title)
-    plt.xlabel(x_label)
-    plt.ylabel(y_label)
-
-    plt.plot(x_data, y_data, ".", label=label)
-    return plt
-
 def plot_error(x_data, y_data, x_error, y_error, x_label='', y_label='', title='', label=''):
     plt.style.use('seaborn-v0_8-whitegrid')
     plt.figure(figsize=(10,5), dpi=300)
@@ -26,6 +16,9 @@ def plot_error(x_data, y_data, x_error, y_error, x_label='', y_label='', title='
 
     plt.errorbar(x_data, y_data, yerr=y_error, xerr=x_error, fmt='.', ecolor='black', capsize=2, label=label)
     return plt
+
+def plot_data(x_data, y_data, x_label='', y_label='', title='', label=''):
+    return plot_error(x_data, y_data, x_error=0, y_error=0, label=label)
 
 
 # data
