@@ -22,7 +22,7 @@ plt.xlabel('Time (s)')                      # add x-axis label
 plt.ylabel('N')                             # add y-axis label
 
 plt.hist(times, bins=25)                    # plot histogram with N bins
-plt.savefig('plots/histogram.pdf')                                  # display plot object
+plt.savefig('plots/histogram.pdf')          # display plot object
 
 
 # calculate mean and errors
