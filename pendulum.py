@@ -14,11 +14,13 @@ def plot_error(x_data, y_data, x_error, y_error, x_label='', y_label='', title='
     plt.xlabel(x_label)
     plt.ylabel(y_label)
 
-    plt.errorbar(x_data, y_data, yerr=y_error, xerr=x_error, fmt='.', ecolor='black', capsize=2, label=label)
+    plt.errorbar(x_data, y_data, yerr=y_error, xerr=x_error, 
+                 fmt='.', ecolor='black', capsize=2, label=label)
     return plt
 
 def plot_data(x_data, y_data, x_label='', y_label='', title='', label=''):
-    return plot_error(x_data, y_data, x_error=0, y_error=0, label=label)
+    return plot_error(x_data, y_data, x_error=0, y_error=0, 
+                      x_label=x_label, y_label=y_label, title=title, label=label)
 
 
 # data
