@@ -22,7 +22,7 @@ plt.xlabel('Time (s)')                      # add x-axis label
 plt.ylabel('N')                             # add y-axis label
 
 plt.hist(times, bins=25)                    # plot histogram with N bins
-plt.savefig('histogram.pdf')                                  # display plot object
+plt.savefig('plots/histogram.pdf')                                  # display plot object
 
 
 # calculate mean and errors
@@ -52,4 +52,4 @@ plt.ylabel('Deviation from Mean Value (s)')
 # plot residuals with positive/negative error bars
 plt.errorbar(range(1, len(times)+1), times - t_mean, yerr=[dt_pos, dt_neg], fmt='.', ecolor='black', capsize=2)
 
-plt.savefig('residuals.pdf')
+plt.savefig('plots/residuals.pdf')

@@ -70,11 +70,11 @@ title = 'Period vs. Length for Mathematical Pendulum'
 
 # plot data without error bars
 plot_Tl = plot_data(length, period, x_label=x_label, y_label=y_label, title=title)
-plot_Tl.savefig('T_vs_Length.pdf')
+plot_Tl.savefig('plots/T_vs_Length.pdf')
 
 # plot data with error bars
 plot_Tl = plot_error(length, period, dl, dT, x_label=x_label, y_label=y_label, title=title)
-plot_Tl.savefig('T_vs_Length_err.pdf')
+plot_Tl.savefig('plots/T_vs_Length_err.pdf')
 
 
 # define fit function
@@ -92,14 +92,14 @@ y = f(x, a_optimal)
 graph_TL = plot_error(length, period, dl, dT, x_label=x_label, y_label=y_label, title=title, label='data')
 graph_TL.plot(x, y, label='fit_function')
 graph_TL.legend()
-graph_TL.savefig('T_vs_Length_fit.pdf')
+graph_TL.savefig('plots/T_vs_Length_fit.pdf')
 
 
 # calculate and plot residuals
 res = period - f(length, a_optimal)
 
 res_plot = plot_error(range(1, N_data+1), res, 0, dT, x_label=x_label, y_label=y_label, title=f'{title} (residuals)')
-res_plot.savefig('T_vs_Length_res.pdf')
+res_plot.savefig('plots/T_vs_Length_res.pdf')
 
 
 # calculate gravitational acceleration from data points
